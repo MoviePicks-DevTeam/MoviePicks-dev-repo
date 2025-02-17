@@ -1,6 +1,6 @@
 kubectl
 
-
+application.properties
 
 # Ignore Gradle project-specific cache directory
 .gradle
