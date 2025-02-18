@@ -17,7 +17,10 @@ public class MemberService {
   @Transactional
   public Long joinMember(MemberDTO memberDTO){
 
-    Member member = Member.builder().username(memberDTO.getUsername()).build();
+    Member member = Member.builder().username(memberDTO.getUsername()).
+        email(memberDTO.getEmail()).
+        password(memberDTO.getPassword()).
+        build();
 
     return memberRepository.save(member);
   }
