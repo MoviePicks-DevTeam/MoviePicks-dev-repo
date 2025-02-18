@@ -6,6 +6,7 @@ import com.moviepicks.domain.Member;
 import com.moviepicks.dto.MemberDTO;
 import com.moviepicks.service.MemberService;
 import jakarta.servlet.http.HttpSession;
+import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.logging.Log;
