@@ -4,13 +4,15 @@ import static com.moviepicks.status.MemberStatus.USER;
 
 import com.moviepicks.status.MemberStatus;
 import jakarta.persistence.*;
+import java.time.LocalDateTime;
 import java.util.List;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-@Builder
 @Table(name = "member")
 public class Member {
 
@@ -42,8 +44,12 @@ public class Member {
   @Enumerated(EnumType.STRING)
   private MemberStatus status;
 
+  @Column(name = "create_date", nullable = false, updatable = false)
+  private LocalDateTime createDate;
+
   public Member() {
     this.status = USER;
+    this.createDate = LocalDateTime.now();
   }
 
 }

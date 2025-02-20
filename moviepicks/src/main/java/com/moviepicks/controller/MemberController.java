@@ -41,7 +41,7 @@ public class MemberController {
     MemberDTO memberDTO = new MemberDTO();
 
 //    memberDTO.setMemberId(member.getMemberId());
-    memberDTO.setNickname(member.getUsername());
+    memberDTO.setNickname(member.getNickname());
 
     return memberDTO;
 

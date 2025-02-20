@@ -5,7 +5,6 @@ import lombok.*;
 
 @Entity
 @Data
-@Builder
 @Table(name = "favorite")
 //즐겨찾기 테이블
 public class Favorite {
