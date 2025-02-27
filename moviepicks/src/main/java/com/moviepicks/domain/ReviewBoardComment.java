@@ -9,12 +9,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import java.sql.Date;
 import java.time.LocalDateTime;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+
 
 @Entity
 @Data
@@ -31,9 +28,9 @@ public class ReviewBoardComment {
   private Member member;
 
   // 리뷰 게시글이 없기 때문에 임시로 만듦
-//  @ManyToOne(fetch = FetchType.LAZY)
-//  @JoinColumn(name = "review_board_id")
-//  private ReviewBoardId reviewBoardId;
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "review_board_id")
+  private ReviewBoard reviewBoardId;
 
   @Column(name = "content", nullable = false)
   private String content;
