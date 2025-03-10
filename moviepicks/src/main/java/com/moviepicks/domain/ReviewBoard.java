@@ -29,8 +29,8 @@ public class ReviewBoard {
   @Column(name = "title", nullable = false)
   private String title;
 
-  @Column(name = "content", nullable = false)
-  private String content;
+  @Column(name = "board_content", nullable = false)
+  private String boardContent;
 
   @Column(name = "point", nullable = false)
   private int point;

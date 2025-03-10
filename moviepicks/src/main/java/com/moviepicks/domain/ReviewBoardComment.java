@@ -26,19 +26,18 @@ public class ReviewBoardComment {
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "member_id")
   private Member member;
-
-  // 리뷰 게시글이 없기 때문에 임시로 만듦
+  
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "review_board_id")
   private ReviewBoard reviewBoardId;
 
-  @Column(name = "content", nullable = false)
-  private String content;
+  @Column(name = "comment_content", nullable = false)
+  private String commentContent;
 
-  @Column(name = "create_date", nullable = false, updatable = false)
-  private LocalDateTime createDate;
+  @Column(name = "comment_create_date", nullable = false, updatable = false)
+  private LocalDateTime commentCreateDate;
 
   public ReviewBoardComment(){
-    this.createDate = LocalDateTime.now();
+    this.commentCreateDate = LocalDateTime.now();
   }
 }

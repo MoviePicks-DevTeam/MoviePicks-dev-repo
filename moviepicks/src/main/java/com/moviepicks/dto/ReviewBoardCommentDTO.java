@@ -10,7 +10,7 @@ public class ReviewBoardCommentDTO {
   private Long commentId;
   private Long memberId;
   private Long reviewBoardId;
-  private String content;
-  private LocalDateTime createDate;
+  private String commentContent;
+  private LocalDateTime commentCreateDate;
 
 }
