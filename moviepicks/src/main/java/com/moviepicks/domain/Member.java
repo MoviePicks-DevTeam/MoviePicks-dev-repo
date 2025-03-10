@@ -6,10 +6,7 @@ import com.moviepicks.status.MemberStatus;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Entity
 @Data
@@ -37,19 +34,28 @@ public class Member {
 
   // orphanRemoval = true : "부모 엔티티가 삭제되면 자식 엔티티도 삭제"
   // cascade = CascadeType.ALL : "부모 엔티티에 수행된 작업(저장, 삭제 등)을 자식 엔티티에도 적용"
+  // 즐겨찾기
   @OneToMany(mappedBy = "member", cascade = CascadeType.ALL, orphanRemoval = true)
   private List<Favorite> favorites;
+
+  // 리뷰 게시글
+  @OneToMany(mappedBy = "member", cascade = CascadeType.ALL, orphanRemoval = true)
+  private List<ReviewBoard> reviewBoards;
+
+  // 게시글 댓글
+  @OneToMany(mappedBy = "member", cascade = CascadeType.ALL, orphanRemoval = true)
+  private List<ReviewBoardComment> reviewBoardComments;
 
   @Column(name = "status", nullable = false)
   @Enumerated(EnumType.STRING)
   private MemberStatus status;
 
-  @Column(name = "create_date", nullable = false, updatable = false)
-  private LocalDateTime createDate;
+  @Column(name = "member_create_date", nullable = false, updatable = false)
+  private LocalDateTime memberCreateDate;
 
   public Member() {
     this.status = USER;
-    this.createDate = LocalDateTime.now();
+    this.memberCreateDate = LocalDateTime.now();
   }
 
 }

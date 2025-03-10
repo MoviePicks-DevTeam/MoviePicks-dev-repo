@@ -14,6 +14,6 @@ public class MemberDTO {
   private String email;
   private String password;
   private MemberStatus status;
-  private LocalDateTime createDate;
+  private LocalDateTime memberCreateDate;
 //  private String provider; // 소셜 로그인 제공자
 }
